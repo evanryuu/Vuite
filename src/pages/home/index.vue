@@ -5,7 +5,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 <template>
   <div class="home-page">
     This is home page
-    <div>
+    <div class="mt-2">
       <a href="https://vitejs.dev" target="_blank">
         <img src="/vite.svg" class="logo" alt="Vite logo">
       </a>

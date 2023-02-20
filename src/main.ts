@@ -5,6 +5,7 @@ import router from './router'
 import pinia from './store'
 
 import './styles/index.css'
+import 'uno.css'
 
 const app = createApp(App)
 app.use(pinia)
