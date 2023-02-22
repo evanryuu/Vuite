@@ -9,11 +9,16 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "lint:script": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix --quiet ./",
-    "lint": "pnpm run lint"
+    "lint:style": "stylelint --fix \"src/**/*.{css,scss,less}\"",
+    "lint": "pnpm run lint:script"
   },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts,.vue}": [
       "npm run lint:script",
+      "git add ."
+    ],
+    "**/*.{css,scss,less}": [
+      "npm run lint:style",
       "git add ."
     ]
   },
@@ -31,10 +36,19 @@
     "@typescript-eslint/parser": "^5.52.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-css-import-order": "^1.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
+    "stylelint": "^15.2.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-standard": "^30.0.1",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-prettier": "^2.0.0",
     "typescript": "^4.9.3",
     "unocss": "^0.49.7",
     "vite": "^4.1.0",

@@ -1,14 +1,26 @@
 module.exports = {
-  plugins: [
-    'css-import-order',
+  plugins: ['css-import-order'],
+  extends: [
+    '@antfu',
+    'plugin:css-import-order/recommended',
+    'prettier',
+    'plugin:prettier/recommended',
   ],
-  extends: ['@antfu', 'plugin:css-import-order/recommended'],
   rules: {
+    'prettier/prettier': 'error', // enable prettier auto fix
     'import/order': [
       'error',
       {
-        'groups': ['builtin', 'external', 'internal', 'sibling', 'index', 'object', 'type'],
-        'pathGroups': [
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
+        pathGroups: [
           {
             pattern: '*.css',
             group: 'type',
@@ -16,7 +28,7 @@ module.exports = {
           },
         ],
         'newlines-between': 'always',
-        'alphabetize': {
+        alphabetize: {
           order: 'asc',
           caseInsensitive: true,
         },
